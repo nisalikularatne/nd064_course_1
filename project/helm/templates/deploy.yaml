@@ -43,12 +43,12 @@ spec:
           ## CPU and memory is allocated for a pod. In this example,
           ## the pod will be allocated with 64 Mebibytes and 250 miliCPUs.
           requests:
-            memory: {{ .Values.requests.memory }}
-            cpu: {{ .Values.request.CPU }}
+            memory: {{ .Values.resources.requests.memory }}
+            cpu: {{ .Values.resources.requests.CPU }}
           ## The resource limits ensure that the application is not consuming
           ## more than the specified CPU and memory values. In this example,
           ## the pod will not surpass 128 Mebibytes and 500 miliCPUs.
           limits:
-            memory: {{ .Values.limit.memory }}
-            cpu: {{ .Values.limit.CPU }}
+            memory: {{ .Values.resources.limit.memory }}
+            cpu: {{ .Values.resources.limit.CPU }}
 status: {}
