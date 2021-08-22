@@ -1,10 +1,10 @@
 namespace:
   name: staging
 service:
-  port: 7111
+  port: 5111
 image:
   pullPolicy: Always
-replicaCount: 5
+replicaCount: 3
 resources:
   requests:
     memory: 90Mi
