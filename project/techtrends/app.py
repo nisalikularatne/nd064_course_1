@@ -116,4 +116,4 @@ if __name__ == "__main__":
     stderr_handler = logging.StreamHandler(sys.stderr)
     stderr_handler.setFormatter(formatter)
     app.logger.addHandler(stderr_handler)
-    app.run(host='0.0.0.0', port='3111')
+    app.run(host='0.0.0.0', port='3111',debug=True)
