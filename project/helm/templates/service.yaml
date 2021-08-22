@@ -3,17 +3,17 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    app: techtrends
-  name: techtrends
-  namespace: sandbox
+    app:  { .Values.namespace.app }
+  name: { .Values.namespace.app }
+  namespace: { .Values.namespace.name }
 spec:
   ports:
-  - name: 4111-3111
-    port: 4111
-    protocol: TCP
-    targetPort: 3111
+  - name: { .Values.service.port }-{ .Values.service.targetPort }
+    port: { .Values.service.port }
+    protocol:  { .Values.service.protocol }
+    targetPort: { .Values.service.targetPort }
   selector:
-    app: techtrends
-  type: ClusterIP
+    app:  { .Values.namespace.app }
+  type: { .Values.service.type }
 status:
   loadBalancer: {}
