@@ -105,7 +105,6 @@ def metrics():
 
 # start the application on port 3111 check
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port='3111')
     formatter = logging.Formatter(
         '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
       )
@@ -117,3 +116,4 @@ if __name__ == "__main__":
     stderr_handler = logging.StreamHandler(sys.stderr)
     stderr_handler.setFormatter(formatter)
     app.logger.addHandler(stderr_handler)
+    app.run(host='0.0.0.0', port='3111')
