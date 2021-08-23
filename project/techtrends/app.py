@@ -107,13 +107,15 @@ def metrics():
 if __name__ == "__main__":
     formatter = logging.Formatter(
         '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-      )
-    app.logger.setLevel(logging.DEBUG)
-
+    )
     stdout_handler = logging.StreamHandler(sys.stdout)
     stdout_handler.setFormatter(formatter)
     app.logger.addHandler(stdout_handler)
     stderr_handler = logging.StreamHandler(sys.stderr)
-    stderr_handler.setFormatter(formatter)
-    app.logger.addHandler(stderr_handler)
+    logging.basicConfig(
+        level=logging.DEBUG,
+        datefmt='%d/%m/%Y, %H:%M:%S,',
+        handlers=[
+            stdout_handler, stderr_handler,
+        ])
     app.run(host='0.0.0.0', port='3111',debug=True)
