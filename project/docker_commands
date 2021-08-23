@@ -10,8 +10,23 @@ docker run -d -p 7111:3111 techtrends
 docker logs f2cf757dc718b474e0964ee9edb5ea4bdb7554edcaebc370c377c0b7367374a5
 ## Logs from the container running the TechTrends application
 # TODO: paste logs from the Docker container 
-* Serving Flask app "app" (lazy loading)
+ * Serving Flask app "app" (lazy loading)
  * Environment: production
    WARNING: This is a development server. Do not use it in a production deployment.
    Use a production WSGI server instead.
- * Debug mode: off
+ * Debug mode: on
+INFO:werkzeug: * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 563-466-138
+[2021-08-23 01:42:02,982] INFO in app: About Us Page is retrieved
+INFO:app:About Us Page is retrieved
+2021-08-23 01:42:02,982 - app - INFO - About Us Page is retrieved
+INFO:werkzeug:172.17.0.1 - - [23/Aug/2021 01:42:03] "GET /about HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [23/Aug/2021 01:42:03] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:172.17.0.1 - - [23/Aug/2021 01:42:10] "GET / HTTP/1.1" 200 -
+[2021-08-23 01:42:11,239] INFO in app: Article 2020 CNCF Annual Report retrieved
+2021-08-23 01:42:11,239 - app - INFO - Article 2020 CNCF Annual Report retrieved
+INFO:app:Article 2020 CNCF Annual Report retrieved
+INFO:werkzeug:172.17.0.1 - - [23/Aug/2021 01:42:11] "GET /1 HTTP/1.1" 200 -
+
